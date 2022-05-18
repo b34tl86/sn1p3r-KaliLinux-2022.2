@@ -251,7 +251,7 @@ cd ..
  if [ ! -f "/root/go/bin/nuclei" ]; then
  	wget https://github.com/projectdiscovery/nuclei/releases/download/v2.7.1/nuclei_2.7.1_linux_amd64.zip -O /tmp/nuclei.zip
 	cd /tmp
-	unzip /tmp/nuclei.tar.gz
+	unzip /tmp/nuclei.zip
  	mv nuclei /root/go/bin/nuclei
  	cd $INSTALL_DIR
  fi
