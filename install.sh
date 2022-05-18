@@ -352,16 +352,16 @@ pip3 install h8mail 2> /dev/null
 # cd $PLUGINS_DIR
 
 # ARACHNI MANUAL INSTALL
-echo -e "$OKBLUE[*]$RESET Installing Arachni...$RESET"
-wget https://github.com/Arachni/arachni/releases/download/v1.6.1.1/arachni-1.6.1.1-0.6.1.1-linux-x86_64.tar.gz -O /tmp/arachni.tar.gz
-cd /tmp/
-tar -zxf arachni.tar.gz
-rm -f /tmp/arachni.tar.gz 2> /dev/null
-cd arachni-*
+# echo -e "$OKBLUE[*]$RESET Installing Arachni...$RESET"
+# wget https://github.com/Arachni/arachni/releases/download/v1.6.1.1/arachni-1.6.1.1-0.6.1.1-linux-x86_64.tar.gz -O /tmp/arachni.tar.gz
+# cd /tmp/
+# tar -zxf arachni.tar.gz
+# rm -f /tmp/arachni.tar.gz 2> /dev/null
+# cd arachni-*
 # mkdir -p /usr/share/arachni 2> /dev/null
 # cp -Rf * /usr/share/arachni/ 2> /dev/null
 # cd /usr/share/arachni/bin/
-for a in `ls`; do ln -fs $PWD/$a /usr/bin/$a; done;
+# for a in `ls`; do ln -fs $PWD/$a /usr/bin/$a; done;
 
 # REMOVE CVE TEMPLATES (ALL CVEs GOING FORWARD COVERED BY NUCLEI)
 rm -f /usr/share/sniper/templates/active/CVE*
