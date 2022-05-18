@@ -358,9 +358,9 @@ cd /tmp/
 tar -zxf arachni.tar.gz
 rm -f /tmp/arachni.tar.gz 2> /dev/null
 cd arachni-*
-mkdir -p /usr/share/arachni 2> /dev/null
-cp -Rf * /usr/share/arachni/ 2> /dev/null
-cd /usr/share/arachni/bin/
+# mkdir -p /usr/share/arachni 2> /dev/null
+# cp -Rf * /usr/share/arachni/ 2> /dev/null
+# cd /usr/share/arachni/bin/
 for a in `ls`; do ln -fs $PWD/$a /usr/bin/$a; done;
 
 # REMOVE CVE TEMPLATES (ALL CVEs GOING FORWARD COVERED BY NUCLEI)
