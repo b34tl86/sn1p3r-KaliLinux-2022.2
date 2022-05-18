@@ -75,29 +75,29 @@ apt-get update
 apt-get install -y python3-paramiko
 apt-get install -y nfs-common
 apt-get install -y nodejs
-apt-get install -y wafw00f
-apt-get install -y xdg-utils
-apt-get install -y ruby
-apt-get install -y rubygems
-apt-get install -y python
-apt-get install -y dos2unix
+# apt-get install -y wafw00f
+# apt-get install -y xdg-utils
+# apt-get install -y ruby
+# apt-get install -y rubygems
+# apt-get install -y python
+# apt-get install -y dos2unix
 apt-get install -y aha
 apt-get install -y libxml2-utils
 apt-get install -y rpcbind
-apt-get install -y cutycapt
+# apt-get install -y cutycapt
 apt-get install -y host
-apt-get install -y whois
-apt-get install -y dnsrecon
+# apt-get install -y whois
+# apt-get install -y dnsrecon
 apt-get install -y curl
-apt-get install -y nmap
-apt-get install -y php7.4
-apt-get install -y php7.4-curl
-apt-get install -y hydra
-apt-get install -y sqlmap
-apt-get install -y nbtscan
-apt-get install -y nikto
-apt-get install -y whatweb
-apt-get install -y sslscan
+# apt-get install -y nmap
+# apt-get install -y php7.4
+# apt-get install -y php7.4-curl
+# apt-get install -y hydra
+# apt-get install -y sqlmap
+# apt-get install -y nbtscan
+# apt-get install -y nikto
+# apt-get install -y whatweb
+# apt-get install -y sslscan
 apt-get install -y jq
 apt-get install -y golang
 apt-get install -y adb
@@ -109,26 +109,26 @@ apt-get remove -y python3-pip
 apt-get install -y python3-pip
 apt-get install -y xmlstarlet
 apt-get install -y net-tools
-apt-get install -y p7zip-full
+# apt-get install -y p7zip-full
 apt-get install -y jsbeautifier
-apt-get install -y theharvester 2> /dev/null
+# apt-get install -y theharvester 2> /dev/null
 apt-get install -y phantomjs 2> /dev/null
 apt-get install -y chromium 2> /dev/null
 apt-get install -y xvfb
-apt-get install -y urlcrazy
+# apt-get install -y urlcrazy
 apt-get install -y iputils-ping
-apt-get install -y enum4linux
+# apt-get install -y enum4linux
 
-echo -e "$OKBLUE[*]$RESET Installing Metasploit...$RESET"
-curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > /tmp/msfinstall
-chmod 755 /tmp/msfinstall
-/tmp/msfinstall
+# echo -e "$OKBLUE[*]$RESET Installing Metasploit...$RESET"
+# curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > /tmp/msfinstall
+# chmod 755 /tmp/msfinstall
+# /tmp/msfinstall
 
 pip3 install dnspython colorama tldextract urllib3 ipaddress requests
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 
-echo -e "$OKBLUE[*]$RESET Installing gem dependencies...$RESET"
-gem install rake 2> /dev/null > /dev/null
+# echo -e "$OKBLUE[*]$RESET Installing gem dependencies...$RESET"
+# gem install rake 2> /dev/null > /dev/null
 gem install ruby-nmap 2> /dev/null > /dev/null
 gem install net-http-persistent 2> /dev/null > /dev/null
 gem install mechanize 2> /dev/null > /dev/null
@@ -175,12 +175,12 @@ echo -e "$OKBLUE[*]$RESET Installing Vulscan...$RESET"
 git clone https://github.com/scipag/vulscan
 
 # METAGOOFIL INSTALLER
-echo -e "$OKBLUE[*]$RESET Installing Metagoofil...$RESET"
-git clone https://github.com/laramies/metagoofil.git
+# echo -e "$OKBLUE[*]$RESET Installing Metagoofil...$RESET"
+# git clone https://github.com/laramies/metagoofil.git
 
 # SHODAN INSTALLER
-echo -e "$OKBLUE[*]$RESET Installing Shodan...$RESET"
-git clone https://github.com/achillean/shodan-python
+# echo -e "$OKBLUE[*]$RESET Installing Shodan...$RESET"
+# git clone https://github.com/achillean/shodan-python
 
 # CMSMAP INSTALLER
 echo -e "$OKBLUE[*]$RESET Installing CMSMap...$RESET"
@@ -231,11 +231,11 @@ pip3 install py-altdns
 cd ..
 
 # MASSDNS INSTALLER
-echo -e "$OKBLUE[*]$RESET Installing MassDNS...$RESET"
-git clone https://github.com/blechschmidt/massdns.git
-cd massdns
-make && make install
-cd ..
+# echo -e "$OKBLUE[*]$RESET Installing MassDNS...$RESET"
+# git clone https://github.com/blechschmidt/massdns.git
+# cd massdns
+# make && make install
+# cd ..
 
 # DNSGEN INSTALLER
 echo -e "$OKBLUE[*]$RESET Installing DNSGen...$RESET"
@@ -246,16 +246,16 @@ python3 setup.py install
 cd ..
 
 # NUCLEI UPDATES
-echo -e "$OKBLUE[*]$RESET Installing Nuclei...$RESET"
-go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
-if [ ! -f "/root/go/bin/nuclei" ]; then
-	wget https://github.com/projectdiscovery/nuclei/releases/download/v2.3.7/nuclei_2.3.7_linux_amd64.tar.gz -O /tmp/nuclei.tar.gz
+ echo -e "$OKBLUE[*]$RESET Installing Nuclei...$RESET"
+ go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+ if [ ! -f "/root/go/bin/nuclei" ]; then
+ 	wget https://github.com/projectdiscovery/nuclei/releases/download/v2.7.1/nuclei_2.7.1_linux_amd64.zip -O /tmp/nuclei.zip
 	cd /tmp
-	tar -zxvf /tmp/nuclei.tar.gz
-	mv nuclei /root/go/bin/nuclei
-	cd $INSTALL_DIR
-fi
-ln -fs /root/go/bin/nuclei /usr/local/bin/nuclei 
+	unzip /tmp/nuclei.tar.gz
+ 	mv nuclei /root/go/bin/nuclei
+ 	cd $INSTALL_DIR
+ fi
+ ln -fs /root/go/bin/nuclei /usr/local/bin/nuclei 
 
 # NUCLEI TEMPLATES UPDATE
 echo -e "$OKBLUE[*]$RESET Installing Nuclei Templates...$RESET"
@@ -327,33 +327,33 @@ rm -f /usr/share/nmap/scripts/vulners.nse
 wget https://raw.githubusercontent.com/vulnersCom/nmap-vulners/master/vulners.nse
 
 # GOBUSTER INSTALLER
-echo -e "$OKBLUE[*]$RESET Installing GoBuster...$RESET"
-wget https://github.com/OJ/gobuster/releases/download/v3.0.1/gobuster-linux-amd64.7z -O /tmp/gobuster.7z
-cd /tmp/
-7z e gobuster.7z
-chmod +rx gobuster
-mv gobuster /usr/bin/gobuster
+# echo -e "$OKBLUE[*]$RESET Installing GoBuster...$RESET"
+# wget https://github.com/OJ/gobuster/releases/download/v3.0.1/gobuster-linux-amd64.7z -O /tmp/gobuster.7z
+# cd /tmp/
+# 7z e gobuster.7z
+# chmod +rx gobuster
+# mv gobuster /usr/bin/gobuster
 
 # SHODAN INSTALLER
-echo -e "$OKBLUE[*]$RESET Installing Shodan...$RESET"
-cd $PLUGINS_DIR
-cd shodan-python
-python setup.py install
-cd ..
+# echo -e "$OKBLUE[*]$RESET Installing Shodan...$RESET"
+# cd $PLUGINS_DIR
+# cd shodan-python
+# python setup.py install
+# cd ..
 
 # H8MAIL INSTALLER
 echo -e "$OKBLUE[*]$RESET Installing H8Mail...$RESET"
 pip3 install h8mail 2> /dev/null
 
 # CMSMAP INSTALLER
-echo -e "$OKBLUE[*]$RESET Installing CMSMap...$RESET"
-cd $PLUGINS_DIR/CMSmap/ && pip3 install . && python3 setup.py install
+# echo -e "$OKBLUE[*]$RESET Installing CMSMap...$RESET"
+# cd $PLUGINS_DIR/CMSmap/ && pip3 install . && python3 setup.py install
 
-cd $PLUGINS_DIR
+# cd $PLUGINS_DIR
 
 # ARACHNI MANUAL INSTALL
 echo -e "$OKBLUE[*]$RESET Installing Arachni...$RESET"
-wget https://github.com/Arachni/arachni/releases/download/v1.5.1/arachni-1.5.1-0.5.12-linux-x86_64.tar.gz -O /tmp/arachni.tar.gz
+wget https://github.com/Arachni/arachni/releases/download/v1.6.1.1/arachni-1.6.1.1-0.6.1.1-linux-x86_64.tar.gz -O /tmp/arachni.tar.gz
 cd /tmp/
 tar -zxf arachni.tar.gz
 rm -f /tmp/arachni.tar.gz 2> /dev/null
@@ -369,19 +369,19 @@ rm -f /usr/share/sniper/templates/active/CVE*
 # PHANTOMJS MANUAL INSTALL
 echo -e "$OKBLUE[*]$RESET Installing PhantomJS...$RESET"
 cd /usr/local/share
-wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2 2> /dev/null
-tar xjf phantomjs-1.9.7-linux-x86_64.tar.bz2 2> /dev/null
-ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs 2> /dev/null
-ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs 2> /dev/null
-ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/bin/phantomjs 2> /dev/null
+wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 2> /dev/null
+tar xjf phantomjs-2.1.1-linux-x86_64.tar.bz2 2> /dev/null
+ln -s /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs 2> /dev/null
+ln -s /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs 2> /dev/null
+ln -s /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/bin/phantomjs 2> /dev/null
 
 # DNS RESOLVERS DOWNLOAD
 echo -e "$OKBLUE[*]$RESET Installing DNS Resolvers...$RESET"
 wget https://raw.githubusercontent.com/janmasarik/resolvers/master/resolvers.txt -O /usr/share/sniper/wordlists/resolvers.txt
 
 # THEHARVESTER KALI SETUP
-echo -e "$OKBLUE[*]$RESET Installing TheHarvester...$RESET"
-cp -f /usr/bin/theHarvester /usr/bin/theharvester 2> /dev/null
+# echo -e "$OKBLUE[*]$RESET Installing TheHarvester...$RESET"
+# cp -f /usr/bin/theHarvester /usr/bin/theharvester 2> /dev/null
 
 # BLACKWIDOW INSTALLER
 echo -e "$OKBLUE[*]$RESET Installing BlackWidow...$RESET"
